@@ -1,0 +1,5 @@
+export * from "../components/from-to-number/from-to-number.component"
+export * from "../components/speed-random/speed-random.component"
+export * from "../components/view-number-random/view-number-random.component"
+export * from "../components/number-speaked/number-speaked.component"
+export * from "../components/status-time/status-time.component"

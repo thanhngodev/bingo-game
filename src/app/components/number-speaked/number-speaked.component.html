@@ -1,0 +1,9 @@
+<div style="padding: 8px;" >
+  <div nz-row [nzGutter]="[8, 8]" class="bingo-speaked" [class.bingo-scroll]="numberArr.length >= 12">
+    <div nz-col class="" *ngFor="let number of numberArr">
+      <div class="bingo-speaked-number font-AF">
+        {{number}}
+      </div>
+    </div>
+  </div>
+</div>

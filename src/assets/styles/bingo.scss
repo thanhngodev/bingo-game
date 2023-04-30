@@ -1,0 +1,99 @@
+.bingo {
+  display: flex;
+  justify-content: center;
+  min-width: 100vw;
+  min-height: 100vh;
+  width: 100%;
+
+  &-container {
+    width: 600px;
+    padding: 20px;
+  }
+
+  &-btn {
+    width: 100%;
+    border-radius: 8px;
+  }
+
+  &-view {
+    border-radius: 10px;
+    padding: 15px 10px;
+    box-shadow: 0px 0px 15px rgb(0 0 0 / 50%);
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &-number {
+      line-height: 0;
+      font-size: 100px;
+    }
+  }
+
+  &-speaked {
+    border-radius: 10px;
+    padding: 16px;
+    border: 1px solid #d9d9d9;
+    display: flex;
+    justify-content: center;
+
+    &-number {
+      width: 50px;
+      height: 50px;
+      font-size: 20px;
+      border: 1px solid #000000;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  &-scroll {
+    max-height: 300px;
+    height: 300px;
+    overflow: auto;
+  }
+
+  &-title {
+    &-1 {
+      font-size: 16px;
+      color: var(--ant-primary-color);
+      font-weight: 600;
+    }
+  }
+
+  &-box {
+    &-1 {
+      width: 100%;
+      padding: 12px;
+      border-radius: 8px;
+      background: #f1f1f1;
+    }
+  }
+
+  &-select {
+    .ant-select:not(.ant-select-customize-input) .ant-select-selector {
+      border-radius: 8px;
+    }
+  }
+}
+
+.title-from-to {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+@media only screen and (max-width: 700px) {
+  .bingo {
+    &-container {
+      width: 100%;
+    }
+
+    &-view {
+      &-number {
+        font-size: 60px;
+      }
+    }
+  }
+}

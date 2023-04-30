@@ -1,0 +1,11 @@
+<div class="bingo-view ">
+    <span *ngIf="numberSpeaked.length > 0" class="bingo-view-number font-AF">{{numberView}}</span>
+    <span *ngIf="!(numberSpeaked.length > 0)" class="bingo-view-number"
+        style="font-weight: bold; text-transform: uppercase;">
+        {{ 'NUMBER_RESULT' | translate }}
+    </span>
+</div>
+<audio *ngIf="" autoplay id="play-recognition"
+    [src]="dataSpeech"
+    controls="controls">
+</audio>

@@ -1,0 +1,13 @@
+<div class="bingo-box-1">
+    <div nz-row>
+        <div nz-col [nzSpan]="24">
+            <span class="bingo-title-1">{{titleTime || "" | translate}}</span>
+        </div>
+        <div nz-col [nzSpan]="24">
+            <nz-slider [(ngModel)]="timeSpeed" [nzMin]="1" [nzMax]="maxRange" [nzStep]="0.5"
+                [nzTipFormatter]="formatter" [nzMarks]="marks" [nzDisabled]="disable"
+                (ngModelChange)="onChangeTimeSpeed($event)">
+            </nz-slider>
+        </div>
+    </div>
+</div>

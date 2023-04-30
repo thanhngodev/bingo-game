@@ -1,0 +1,21 @@
+<div class="bingo-box-1">
+    <div nz-row [nzGutter]="[16, 10]">
+        <div nz-col [nzSpan]="24">
+            <span class="bingo-title-1">{{titleFromTo || "" | translate}}</span>
+        </div>
+        <div nz-col [nzSpan]="12">
+            <span class="title-from-to">{{fromTitleField || "" | translate}}</span>
+            <nz-input-number style="width: 100%" [(ngModel)]="fromNumber" [nzStep]="step" [nzMin]="min" [nzMax]="max"
+                [nzDisabled]="disable" [nzSize]="'large'" [nzPlaceHolder]="fromTitleField"
+                (ngModelChange)="onChangeFrom($event)">
+            </nz-input-number>
+        </div>
+        <div nz-col [nzSpan]="12">
+            <span class="title-from-to">{{toTitleField || "" | translate}}</span>
+            <nz-input-number style="width: 100%" [(ngModel)]="toNumber" [nzStep]="step" [nzMin]="min" [nzMax]="max"
+                [nzDisabled]="disable" [nzSize]="'large'" [nzPlaceHolder]="toTitleField"
+                (ngModelChange)="onChangeTo($event)">
+            </nz-input-number>
+        </div>
+    </div>
+</div>
