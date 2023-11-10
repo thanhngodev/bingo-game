@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { BingoService } from 'src/app/services/bingo.service';
-import { SpeechDataVi } from 'src/data/speech';
+import { TtsService } from 'src/app/services/tts.service';
 
 @Component({
   selector: 'app-view-number-random',
@@ -20,15 +20,14 @@ export class ViewNumberRandomComponent implements OnInit {
   flagRandom: any
   flagSpeed: any
   elmAudio: any = document.getElementById('play-recognition')
-  dataSpeech = SpeechDataVi
   itemSpeechNumber: string = ""
 
-  constructor(private bingoService: BingoService) { }
+  constructor(
+    private bingoService: BingoService, 
+    private ttsService: TtsService
+  ) { }
 
   ngOnInit(): void {
-    setTimeout(() => {
-      this.elmAudio = document.getElementById('play-recognition')
-    }, 200);
     this.bingoService.arrDataNumber$.subscribe(value => this.numberData = value)
     this.bingoService.start$.subscribe(value => {
       if (value) {
@@ -51,7 +50,8 @@ export class ViewNumberRandomComponent implements OnInit {
       if (this.numberData.length > 0) {
         this.numberSpeaked = [...this.numberSpeaked, this.numberData[idNumberNew]]
         this.bingoService.numberSpeaked$.next(this.numberSpeaked)
-
+        let text = 'Số ' + this.numberSpeaked[this.numberSpeaked.length - 1];
+        this.ttsService.speakVietnamese(text.toString());
         this.numberData.splice(idNumberNew, 1)
         this.bingoService.arrDataNumber$.next(this.numberData)
       } else {
